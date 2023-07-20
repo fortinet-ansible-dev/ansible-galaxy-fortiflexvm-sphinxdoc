@@ -56,7 +56,10 @@ def transfer_option(input_dict):
         option_list.append("")
         for possible_param in ["type","required","choices","default"]:
             if possible_param in params:
-                option_list.append("  :{}: {}".format(possible_param, params[possible_param]))
+                value = params[possible_param]
+                if value == "":
+                    value = '""'
+                option_list.append("  :{}: {}".format(possible_param, value))
         if "suboptions" in params:
             for sub_option_name, sub_params in params["suboptions"].items():
                 option_list.append("")
@@ -66,7 +69,10 @@ def transfer_option(input_dict):
                 option_list.append("")
                 for possible_param in ["type","required","choices","default"]:
                     if possible_param in sub_params:
-                        option_list.append("  :{}: {}".format(possible_param, sub_params[possible_param]))
+                        value = sub_params[possible_param]
+                        if value == "":
+                            value = '""'
+                        option_list.append("  :{}: {}".format(possible_param, value))
     return option_list
 
 
@@ -92,8 +98,9 @@ for module_name in module_names:
 
     # Write new document
     output_path = os.path.join(OUTPUT_DIR, module_name+".rst")
-    output_data = template_data.format(name = documentation_dict["module"], 
-                                    short_description = documentation_dict["short_description"],
+    title = "{} - {}\n{}".format(documentation_dict["module"], documentation_dict["short_description"],
+                                  "+"*(3+len(documentation_dict["module"])+len(documentation_dict["short_description"])))
+    output_data = template_data.format(title = title,
                                     description = " ".join(documentation_dict["description"]),
                                     version_added = documentation_dict["version_added"],
                                     example = "\n  ".join(example_data.split("\n")),
