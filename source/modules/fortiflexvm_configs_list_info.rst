@@ -124,7 +124,7 @@ Return Values
     
     .. option:: service
     
-      he value of this attribute is one of "FC" (FortiCare), "UTM", "ENT" (Enterprise) or "ATP".
+      he value of this attribute is one of "FC" (FortiCare), "UTP", "ENT" (Enterprise) or "ATP".
     
       :type: str
       :returned: always

@@ -90,7 +90,7 @@ Parameters
 
   .. option:: service
 
-    The value of this attribute is one of "FC" (FortiCare), "UTM", "ENT" (Enterprise) or "ATP".
+    The value of this attribute is one of "FC" (FortiCare), "UTP", "ENT" (Enterprise) or "ATP".
 
   :type: str
   :required: True
@@ -318,7 +318,7 @@ Examples
   
           fortiGateBundle:
             cpu: "2"      # "1", "2", "4", "8", "16", "32", "2147483647"
-            service: "FC" # "FC", "UTM", "ENT", "ATP"
+            service: "FC" # "FC", "UTP", "ENT", "ATP"
             vdom: 10      # 0 ~ 500
   
           # fortiManager:
@@ -416,7 +416,7 @@ Return Values
     
     .. option:: service
     
-      he value of this attribute is one of "FC" (FortiCare), "UTM", "ENT" (Enterprise) or "ATP".
+      he value of this attribute is one of "FC" (FortiCare), "UTP", "ENT" (Enterprise) or "ATP".
     
       :type: str
       :returned: always
