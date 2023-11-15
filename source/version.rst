@@ -4,7 +4,9 @@ FortiFlexVM Galaxy Versions and Release Notes
 +---------------------+----------------+------------------------------------------------------------------+
 | Galaxy Version      | Release date   | Path to Install                                                  |
 +=====================+================+==================================================================+
-| 2.0.1 ``latest``    | 2023/09/06     | ``ansible-galaxy collection install fortinet.fortiflexvm:2.0.1`` |
+| 2.0.2 ``latest``    | 2023/11/17     | ``ansible-galaxy collection install fortinet.fortiflexvm:2.0.2`` |
++---------------------+----------------+------------------------------------------------------------------+
+| 2.0.1               | 2023/09/06     | ``ansible-galaxy collection install fortinet.fortiflexvm:2.0.1`` |
 +---------------------+----------------+------------------------------------------------------------------+
 | 2.0.0               | 2023/07/20     | ``ansible-galaxy collection install fortinet.fortiflexvm:2.0.0`` |
 +---------------------+----------------+------------------------------------------------------------------+
@@ -14,6 +16,21 @@ FortiFlexVM Galaxy Versions and Release Notes
 **Note**: Use ``-f`` option (i.e.
 ``ansible-galaxy collection install -f fortinet.fortiflexvm:x.x.x``) to
 renew your existing local installation.
+
+
+Release Galaxy 2.0.2
+--------------------
+
+Support 3 new configurations.
+
+Bugfixes
+^^^^^^^^
+
+- Support 3 new configurations, fortiClientEMSOP, fortiCloudPrivate and fortiCloudPublic.
+- Support optional argument accountId in some modules.
+- Update parameters for existing products.
+- entitlements_points_info supports getting results for specified entitlement.
+
 
 
 Release Galaxy 2.0.1
