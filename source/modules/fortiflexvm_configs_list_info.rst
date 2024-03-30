@@ -27,21 +27,18 @@ Parameters
   The username to authenticate. If not declared, the code will read the environment variable FORTIFLEX_ACCESS_USERNAME.
 
   :type: str
-  :required: False
 
 .. option:: password
 
   The password to authenticate. If not declared, the code will read the environment variable FORTIFLEX_ACCESS_PASSWORD.
 
   :type: str
-  :required: False
 
 .. option:: accountId
 
   Account ID.
 
   :type: int
-  :required: False
 
 .. option:: programSerialNumber
 
@@ -58,8 +55,6 @@ Examples
 
   - name: Get list of FortiFlex Configurations for a Program
     hosts: localhost
-    collections:
-      - fortinet.fortiflexvm
     vars:
       username: "<your_own_value>"
       password: "<your_own_value>"
@@ -73,7 +68,7 @@ Examples
         register: result
   
       - name: Display response
-        debug:
+        ansible.builtin.debug:
           var: result.configs
   
 
@@ -245,19 +240,19 @@ Return Values
     
     .. option:: ZTNA
     
-      ZTNA/VPN (number of endpoints). Number between 0 and 25000 (inclusive). Value should be divisible by 25.
+      ZTNA/VPN (number of endpoints). Value should be 0 or between 25 and 25000.
     
       :type: int
     
     .. option:: EPP
     
-      EPP/ATP + ZTNA/VPN (number of endpoints). Number between 0 and 25000 (inclusive). Value should be divisible by 25.
+      EPP/ATP + ZTNA/VPN (number of endpoints). Value should be 0 or between 25 and 25000.
     
       :type: int
     
     .. option:: chromebook
     
-      Chromebook (number of endpoints). Number between 0 and 25000 (inclusive). Value should be divisible by 25.
+      Chromebook (number of endpoints). Value should be 0 or between 25 and 25000.
     
       :type: int
     
@@ -395,37 +390,91 @@ Return Values
     
     .. option:: ZTNA
     
-      ZTNA/VPN (number of endpoints). Number between 0 and 25000 (inclusive). Value should be divisible by 25.
+      ZTNA/VPN (number of endpoints). Value should be 0 or between 25 and 25000.
     
       :type: int
     
     .. option:: ZTNA_FGF
     
-      ZTNA/VPN + FortiGuard Forensics (number of endpoints). Number between 0 and 25000 (inclusive). Value should be divisible by 25.
+      ZTNA/VPN + FortiGuard Forensics (number of endpoints). Value should be 0 or between 25 and 25000.
     
       :type: int
     
     .. option:: EPP_ZTNA
     
-      EPP/ATP + ZTNA/VPN (number of endpoints). Number between 0 and 25000 (inclusive). Value should be divisible by 25.
+      EPP/ATP + ZTNA/VPN (number of endpoints). Value should be 0 or between 25 and 25000.
     
       :type: int
     
     .. option:: EPP_ZTNA_FGF
     
-      EPP/ATP + ZTNA/VPN + FortiGuard Forensics (number of endpoints). Number between 0 and 25000 (inclusive). Value should be divisible by 25.
+      EPP/ATP + ZTNA/VPN + FortiGuard Forensics (number of endpoints). Value should be 0 or between 25 and 25000.
     
       :type: int
     
     .. option:: chromebook
     
-      Chromebook (number of endpoints). Number between 0 and 25000 (inclusive). Value should be divisible by 25.
+      Chromebook (number of endpoints). Value should be 0 or between 25 and 25000.
     
       :type: int
     
     .. option:: addons
     
       Addons. A list. Possible value is "BPS" ( FortiCare Best Practice).
+    
+      :type: list
+  
+  .. option:: fortiSASE
+  
+    fortiSASE Cloud Configuration.
+  
+    :type: dict
+    
+    .. option:: users
+    
+      Number of users. Number between 50 and 50,000 (inclusive). Number between 50 and 50,000 (inclusive). Value should be divisible by 25.
+    
+      :type: int
+    
+    .. option:: service
+    
+      Service package. "FSASESTD" (Standard) or "FSASEADV" (Advanced).
+    
+      :type: str
+    
+    .. option:: bandwidth
+    
+      Number between 25 and 10,000 (inclusive). Value should be divisible by 25.
+    
+      :type: int
+    
+    .. option:: dedicatedIPs
+    
+      Number between 4 and 65,534 (inclusive).
+    
+      :type: int
+  
+  .. option:: fortiEDR
+  
+    fortiEDR Cloud Configuration.
+  
+    :type: dict
+    
+    .. option:: service
+    
+      Service package. "FEDRPDR" (Discover/Protect/Respond).
+    
+      :type: str
+    
+    .. option:: endpoints
+    
+      Number of Endpoints. Read only.
+    
+      :type: int
+    
+    .. option:: addons
+    
+      Addons. A list. Possible value is "FEDRXDR" (XDR).
     
       :type: list
 

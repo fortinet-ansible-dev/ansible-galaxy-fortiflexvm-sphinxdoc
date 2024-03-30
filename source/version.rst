@@ -4,7 +4,7 @@ FortiFlexVM Galaxy Versions and Release Notes
 +---------------------+----------------+------------------------------------------------------------------+
 | Galaxy Version      | Release date   | Path to Install                                                  |
 +=====================+================+==================================================================+
-| 2.1.0 ``latest``    | 2024/01/26     | ``ansible-galaxy collection install fortinet.fortiflexvm:2.1.0`` |
+| 2.1.0 ``latest``    | 2024/01/25     | ``ansible-galaxy collection install fortinet.fortiflexvm:2.1.0`` |
 +---------------------+----------------+------------------------------------------------------------------+
 | 2.0.2               | 2023/11/15     | ``ansible-galaxy collection install fortinet.fortiflexvm:2.0.2`` |
 +---------------------+----------------+------------------------------------------------------------------+
@@ -18,6 +18,37 @@ FortiFlexVM Galaxy Versions and Release Notes
 **Note**: Use ``-f`` option (i.e.
 ``ansible-galaxy collection install -f fortinet.fortiflexvm:x.x.x``) to
 renew your existing local installation.
+
+
+
+Release Galaxy 2.2.0
+--------------------
+
+Release Summary
+^^^^^^^^^^^^^^^
+
+Added 1 new resource, 2 new configurations.
+
+Minor Changes
+^^^^^^^^^^^^^
+
+- Added 1 new resource, fortiflexvm_tool_calc_info.
+- Added 2 new configurations, fortiSASE and fortiEDR.
+- fortiflexvm_entitlements_list_info supported options "description", "serialnumber", "status", "tokenstatus".
+- fortiflexvm_groups_nexttoken_info supported option "status". According to API, either "configId" or "accountId" is required now.
+
+Bugfixes
+^^^^^^^^
+
+- Imporved the format of example Ansible playbooks.
+- Improved logic of fortiflexvm_entitlements_update.
+
+New Modules
+^^^^^^^^^^^
+
+- fortinet.fortiflexvm.fortiflexvm_tools_calc_info - Estimate points that will be consumed for configuration with certain parameters.
+
+
 
 Release Galaxy 2.1.0
 --------------------
